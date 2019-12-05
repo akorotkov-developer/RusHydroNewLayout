@@ -1,0 +1,19 @@
+{
+    "name": "RusHydro",
+    "description": "RusHydro composer file",
+    "authors": [
+        {
+            "name": "AKorotkov"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "RusHydro\\": "app/"
+        },
+        "files": [
+            "app/common.php",
+            "app/handlers.php",
+            "app/functions.php"
+        ]
+    }
+}
