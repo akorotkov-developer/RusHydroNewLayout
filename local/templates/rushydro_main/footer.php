@@ -4,7 +4,11 @@ IncludeTemplateLangFile(__FILE__);
 use RusHydro\Config;
 use Bitrix\Main\Page\Asset;
 ?>
-                    <?$APPLICATION->IncludeComponent("bitrix:menu","rightmenu",Array(
+                        <?if ($APPLICATION->GetCurPage() != "/") {?>
+                            </div>
+                        <?}
+                    $APPLICATION->IncludeComponent("bitrix:menu","rightmenu",
+                        [
                             "ROOT_MENU_TYPE" => "right",
                             "MAX_LEVEL" => "1",
                             "CHILD_MENU_TYPE" => "",
@@ -15,7 +19,7 @@ use Bitrix\Main\Page\Asset;
                             "MENU_CACHE_TIME" => "3600",
                             "MENU_CACHE_USE_GROUPS" => "Y",
                             "MENU_CACHE_GET_VARS" => ""
-                        )
+                        ]
                     );?>
                 </div>
 

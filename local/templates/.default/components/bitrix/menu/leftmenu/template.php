@@ -2,7 +2,12 @@
 
 <?php if (!empty($arResult)){?>
 
-    <div class="aside">
+    <?php
+    if ($APPLICATION->GetCurPage() != "/") {
+        $mainClass = "aside_inner";
+    }
+    ?>
+    <div class="aside <?=$mainClass?>">
         <nav class="navigation">
             <ul class="navigation_list">
                 <?php foreach ($arResult["TREE_MENU"] as $arItem) {?>

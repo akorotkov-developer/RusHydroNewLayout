@@ -6,7 +6,7 @@ use RusHydro\Config;
 use RusHydro\Tools;
 use Bitrix\Main\Page\Asset;
 
-CJSCore::Init(array("jquery"));
+CJSCore::Init(["jquery"]);
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +49,7 @@ CJSCore::Init(array("jquery"));
         <?$APPLICATION->IncludeComponent(
         "bitrix:menu",
         "topmenu",
-        array(
+        [
             "ROOT_MENU_TYPE" => "top",
             "MAX_LEVEL" => "1",
             "CHILD_MENU_TYPE" => "top",
@@ -59,10 +59,10 @@ CJSCore::Init(array("jquery"));
             "MENU_CACHE_TYPE" => "N",
             "MENU_CACHE_TIME" => "3600",
             "MENU_CACHE_USE_GROUPS" => "Y",
-            "MENU_CACHE_GET_VARS" => array(
-            ),
+            "MENU_CACHE_GET_VARS" => [
+            ],
             "COMPONENT_TEMPLATE" => ".default"
-        ),
+        ],
         false
     );?>
     <header class="header">
@@ -71,7 +71,8 @@ CJSCore::Init(array("jquery"));
 
     <?php
     if ($APPLICATION->GetCurPage() == "/") {
-        $APPLICATION->IncludeComponent("bitrix:news.list","slider",Array(
+        $APPLICATION->IncludeComponent("bitrix:news.list","slider",
+            [
                 "DISPLAY_DATE" => "Y",
                 "DISPLAY_NAME" => "Y",
                 "DISPLAY_PICTURE" => "Y",
@@ -85,13 +86,13 @@ CJSCore::Init(array("jquery"));
                 "SORT_BY2" => "SORT",
                 "SORT_ORDER2" => "ASC",
                 "FILTER_NAME" => "",
-                "FIELD_CODE" => Array("ID"),
-                "PROPERTY_CODE" => Array("DESCRIPTION", "URL"),
+                "FIELD_CODE" => ["ID"],
+                "PROPERTY_CODE" => ["DESCRIPTION", "URL"],
                 "CHECK_DATES" => "Y",
                 "DETAIL_URL" => "",
                 "PREVIEW_TRUNCATE_LEN" => "",
                 "ACTIVE_DATE_FORMAT" => "d.m.Y",
-                "SET_TITLE" => "Y",
+                "SET_TITLE" => "N",
                 "SET_BROWSER_TITLE" => "Y",
                 "SET_META_KEYWORDS" => "Y",
                 "SET_META_DESCRIPTION" => "Y",
@@ -124,11 +125,14 @@ CJSCore::Init(array("jquery"));
                 "AJAX_OPTION_STYLE" => "Y",
                 "AJAX_OPTION_HISTORY" => "N",
                 "AJAX_OPTION_ADDITIONAL" => ""
-            )
+            ]
         );
+    } else {
+        $mainClass = "content-blocks_template";
     }?>
-    <div class="content-blocks">
-        <?$APPLICATION->IncludeComponent("bitrix:menu","leftmenu",Array(
+    <div class="content-blocks <?=$mainClass?>">
+        <?$APPLICATION->IncludeComponent("bitrix:menu","leftmenu",
+            [
                 "ROOT_MENU_TYPE" => "top",
                 "MAX_LEVEL" => "2",
                 "CHILD_MENU_TYPE" => "left",
@@ -139,6 +143,15 @@ CJSCore::Init(array("jquery"));
                 "MENU_CACHE_TIME" => "3600",
                 "MENU_CACHE_USE_GROUPS" => "Y",
                 "MENU_CACHE_GET_VARS" => ""
-            )
+            ]
         );?>
         <div class="content-blocks_inner">
+            <?php if ($APPLICATION->GetCurPage() != "/") {?>
+                <div class="content-block content-block_text">
+                    <?$APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
+                            "START_FROM" => "0",
+                            "PATH" => "",
+                            "SITE_ID" => "s1"
+                        )
+                    );?>
+            <?}

@@ -1,57 +1,26 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Контакты");
+$APPLICATION->AddChainItem($APPLICATION->GetTitle());
 ?>
-<p>Обратитесь к нашим специалистам и получите профессиональную консультацию по вопросам создания и покупки мебели (от дизайна, разработки технического задания до доставки мебели к Вам домой).</p>
 
-<p>Вы можете обратиться к нам по телефону, по электронной почте или договориться о встрече в нашем офисе. Будем рады помочь вам и ответить на все ваши вопросы. </p>
+<div class="content-block_header">
+    <h1 class="h1">Контакты</h1>
+    <a class="print" href="javascript:(print());">
+        Версия для печати
+    </a>
+</div>
+<div class="content-text">
+    <p><b>Адрес:</b>  ПАО «РусГидро» 127006, г. Москва, ул. Малая Дмитровка, д.7</p>
 
-<h2>Телефоны</h2>
+    <p><b>Телефон:</b> +7 (800) 333 80 80</p>
 
-<ul> 
-	<li>Телефон/факс:
-		<ul> 
-			<li><b>(495) 212-85-06</b></li>
-		</ul>
-	</li>
- 
-	<li>Телефоны:
-		<ul> 
-			<li><b>(495) 212-85-07</b></li>
-			<li><b>(495) 212-85-08</b></li>
-		</ul>
-	</li>
-</ul>
+    <p><b>Администраторы:</b></p>
 
-<h2>Email</h2>
+    <p>—	Наталья Климанцова +7 (495) 788 37 41, e-mail: nk@makonews.ru</p>
 
-<ul> 
-  <li><a href="mailto:info@example.ru">info@example.ru</a> &mdash; общие вопросы</li>
-  <li><a href="mailto:sales@example.ru">sales@example.ru</a> &mdash; приобретение продукции</li>
-  <li><a href="mailto:marketing@example.ru">marketing@example.ru</a> &mdash; маркетинг/мероприятия/PR</li>
-</ul>
-
-<h2>Офис в Москве</h2>
-<p><?$APPLICATION->IncludeComponent("bitrix:map.google.view", ".default", array(
-	"KEY" => "ABQIAAAAOSNukcWVjXaGbDo6npRDcxS1yLxjXbTnpHav15fICwCqFS-qhhSby0EyD6rK_qL4vuBSKpeCz5cOjw",
-	"INIT_MAP_TYPE" => "NORMAL",
-	"MAP_DATA" => "a:3:{s:10:\"google_lat\";s:7:\"55.7383\";s:10:\"google_lon\";s:7:\"37.5946\";s:12:\"google_scale\";i:13;}",
-	"MAP_WIDTH" => "600",
-	"MAP_HEIGHT" => "500",
-	"CONTROLS" => array(
-		0 => "LARGE_MAP_CONTROL",
-		1 => "MINIMAP",
-		2 => "HTYPECONTROL",
-		3 => "SCALELINE",
-	),
-	"OPTIONS" => array(
-		0 => "ENABLE_SCROLL_ZOOM",
-		1 => "ENABLE_DBLCLICK_ZOOM",
-		2 => "ENABLE_DRAGGING",
-	),
-	"MAP_ID" => ""
-	),
-	false
-);?></p>
+    <p><b>Контакнты для СМИ:</b>  pr@rushydro.ru</p>
+</div>
+<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A8798afede9242abdbc19e384e61b2081f70e2a56476b82e417b290370587ab1f&amp;width=100%&amp;height=588&amp;lang=ru_RU&amp;scroll=true"></script>
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

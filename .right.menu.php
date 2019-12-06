@@ -25,7 +25,7 @@ $aMenuLinks = [
     ],
 	[
 		"Контакты",
-		"/",
+		"/contacts/",
 		[],
 		["orange_class" => "buttons_list-orang"],
 		""
