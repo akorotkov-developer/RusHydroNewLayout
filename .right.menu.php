@@ -4,21 +4,21 @@
 $aMenuLinks = [
 	[
 		"Подать заявку",
-		"/",
+		"/submitapplication/",
 		[],
 		[],
 		""
     ],
 	[
 		"Конкурсные работы 2019",
-		"/",
+		"/competitivework/",
 		[],
 		[],
 		""
     ],
 	[
 		"Задать вопрос",
-		"/",
+		"/asqquestion/",
 		[],
 		["orange_class" => "buttons_list-orang"],
 		""
