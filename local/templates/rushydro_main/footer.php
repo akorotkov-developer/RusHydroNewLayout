@@ -1,41 +1,30 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+<?php if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 IncludeTemplateLangFile(__FILE__);
+
+use RusHydro\Config;
+use Bitrix\Main\Page\Asset;
 ?>
-			</div>
-		</div>
-		<div id="space-for-footer"></div>
-	</div>
-	
-	<div id="footer">
-	
-		<div id="copyright">
-<?
-$APPLICATION->IncludeFile(
-	SITE_DIR."include/copyright.php",
-	Array(),
-	Array("MODE"=>"html")
-);
-?>
-		</div>
-		<div class="footer-links">	
-<?
-$APPLICATION->IncludeComponent("bitrix:menu", "bottom", array(
-	"ROOT_MENU_TYPE" => "bottom",
-	"MENU_CACHE_TYPE" => "N",
-	"MENU_CACHE_TIME" => "36000000",
-	"MENU_CACHE_USE_GROUPS" => "Y",
-	"MENU_CACHE_GET_VARS" => array(
-	),
-	"MAX_LEVEL" => "1",
-	"CHILD_MENU_TYPE" => "left",
-	"USE_EXT" => "N",
-	"ALLOW_MULTI_SELECT" => "N"
-	),
-	false
-);
-?>
-		</div>
-		<div id="footer-design"><?=GetMessage("FOOTER_DISIGN")?></div>
-	</div>
+                    <?$APPLICATION->IncludeComponent("bitrix:menu","rightmenu",Array(
+                            "ROOT_MENU_TYPE" => "right",
+                            "MAX_LEVEL" => "1",
+                            "CHILD_MENU_TYPE" => "",
+                            "USE_EXT" => "Y",
+                            "DELAY" => "N",
+                            "ALLOW_MULTI_SELECT" => "Y",
+                            "MENU_CACHE_TYPE" => "N",
+                            "MENU_CACHE_TIME" => "3600",
+                            "MENU_CACHE_USE_GROUPS" => "Y",
+                            "MENU_CACHE_GET_VARS" => ""
+                        )
+                    );?>
+                </div>
+
+            </div>
+            <script src="<?=Config::RUSHYDRO_TEMPLATE_PATH?>js/main.min.js"></script>
+            <script src="<?=Config::RUSHYDRO_TEMPLATE_PATH?>js/vendor.min.js"></script>
+            <script src="<?=Config::RUSHYDRO_TEMPLATE_PATH?>js/script.js"></script>
+        </div>
+
+    </div>
 </body>
 </html>
