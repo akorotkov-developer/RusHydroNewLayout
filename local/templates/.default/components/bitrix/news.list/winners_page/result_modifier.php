@@ -1,6 +1,13 @@
 <?php
 foreach ($arResult["ITEMS"] as $key => $arItem) {
-    $arResult["ITEMS"][$key]["PROPERTIES"]["VIDEO_URL"]["VALUE"] = str_replace("watch?v=", "embed/", $arItem["PROPERTIES"]["VIDEO_URL"]["VALUE"]);
+    $renderImage = CFile::ResizeImageGet(
+        $arItem["PREVIEW_PICTURE"],
+        ["width"   => 222,
+         "height"  => 148],
+        BX_RESIZE_IMAGE_EXACT, false
+    );
+
+    $arResult["ITEMS"][$key]["RESIZE_PICTURE"] = $renderImage;
 }
 
 $dates = [];

@@ -1,8 +1,6 @@
 <?php
 if ($arResult["DETAIL_PICTURE"]) {
     $picture = $arResult["DETAIL_PICTURE"];
-} else {
-    $picture = $arResult["PREVIEW_PICTURE"];
 }
 
 $renderImage = CFile::ResizeImageGet(

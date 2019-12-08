@@ -7,7 +7,7 @@ use RusHydro\Tools;
 if ($_GET["year"]) {
     $from = date("1.1." . $_GET["year"]);
     $to = date("31.12." . $_GET["year"]);
-    $arrFilter = Array(">=DATE_ACTIVE_FROM" => $from, "<=DATE_ACTIVE_FROM" => $to);
+    $arrFilter = [">=DATE_ACTIVE_FROM" => $from, "<=DATE_ACTIVE_FROM" => $to];
 }
 
 $APPLICATION->IncludeComponent("bitrix:news.list","video_page",

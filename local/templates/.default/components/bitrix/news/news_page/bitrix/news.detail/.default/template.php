@@ -37,15 +37,17 @@ $currentDate = str_replace($_mD, " ".$_monthsList[$_mD]." ", $currentDate);
 
 <div class="content-text_date"><?=$currentDate?></div>
 <div class="content-text_image-block">
-    <div class="content-text_image">
-        <img src="<?=$arResult["PICTURE"]["src"]?>">
-    </div>
+    <?php if($arResult["PICTURE"]) {?>
+        <div class="content-text_image">
+            <img src="<?=$arResult["PICTURE"]["src"]?>">
+        </div>
+    <?php }?>
     <div class="content-text_image-text">
         <?=$arResult["DETAIL_TEXT"]?>
     </div>
 </div>
 <div class="content-footer">
-    <a href="" class="content-footer_back">← К списку новостей</a>
+    <a href="/news/" class="content-footer_back">← К списку новостей</a>
     <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.min.js"></script>
     <script src="https://yastatic.net/share2/share.min.js"></script>
     <div class="ya-share2" data-шservices="collections,vkontakte,facebook,odnoklassniki,moimir"></div>
