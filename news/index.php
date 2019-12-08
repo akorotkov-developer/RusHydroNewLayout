@@ -2,7 +2,6 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Новости");
 
-use RusHydro\Config;
 use RusHydro\Tools;
 ?>
 <?$APPLICATION->IncludeComponent(
