@@ -58,8 +58,8 @@ use RusHydro\Tools;
 		"BROWSER_TITLE" => "-",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_FIELD_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "PREVIEW_PICTURE",
+			1 => "DETAIL_PICTURE",
 		),
 		"DETAIL_PROPERTY_CODE" => array(
 			0 => "",
@@ -80,7 +80,7 @@ use RusHydro\Tools;
 		"PAGER_SHOW_ALL" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"SET_LAST_MODIFIED" => "N",
-		"ADD_ELEMENT_CHAIN" => "N",
+		"ADD_ELEMENT_CHAIN" => "Y",
 		"STRICT_SECTION_CHECK" => "N",
 		"DISPLAY_DATE" => "Y",
 		"DISPLAY_PICTURE" => "Y",
