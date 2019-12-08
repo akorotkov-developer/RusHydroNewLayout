@@ -14,7 +14,6 @@ use RusHydro\Tools;
             "DISPLAY_NAME" => "Y",
             "DISPLAY_PICTURE" => "Y",
             "DISPLAY_PREVIEW_TEXT" => "Y",
-            "AJAX_MODE" => "Y",
             "IBLOCK_TYPE" => "news",
             "IBLOCK_ID" => Tools::GetIDByCode("quote_day"),
             "NEWS_COUNT" => "1",
@@ -46,7 +45,6 @@ use RusHydro\Tools;
             "CACHE_GROUPS" => "Y",
             "DISPLAY_TOP_PAGER" => "Y",
             "DISPLAY_BOTTOM_PAGER" => "Y",
-            "PAGER_TITLE" => "Новости",
             "PAGER_SHOW_ALWAYS" => "Y",
             "PAGER_TEMPLATE" => "",
             "PAGER_DESC_NUMBERING" => "Y",
@@ -58,10 +56,6 @@ use RusHydro\Tools;
             "MESSAGE_404" => "",
             "PAGER_BASE_LINK" => "",
             "PAGER_PARAMS_NAME" => "arrPager",
-            "AJAX_OPTION_JUMP" => "N",
-            "AJAX_OPTION_STYLE" => "Y",
-            "AJAX_OPTION_HISTORY" => "N",
-            "AJAX_OPTION_ADDITIONAL" => ""
         ]
     );
     ?>
@@ -93,7 +87,6 @@ use RusHydro\Tools;
                 "DISPLAY_NAME" => "Y",
                 "DISPLAY_PICTURE" => "Y",
                 "DISPLAY_PREVIEW_TEXT" => "Y",
-                "AJAX_MODE" => "Y",
                 "IBLOCK_TYPE" => "news",
                 "IBLOCK_ID" => Tools::GetIDByCode("news"),
                 "NEWS_COUNT" => "1",
@@ -137,10 +130,6 @@ use RusHydro\Tools;
                 "MESSAGE_404" => "",
                 "PAGER_BASE_LINK" => "",
                 "PAGER_PARAMS_NAME" => "arrPager",
-                "AJAX_OPTION_JUMP" => "N",
-                "AJAX_OPTION_STYLE" => "Y",
-                "AJAX_OPTION_HISTORY" => "N",
-                "AJAX_OPTION_ADDITIONAL" => ""
             ]
         );
         ?>
@@ -155,7 +144,6 @@ use RusHydro\Tools;
                 "DISPLAY_NAME" => "Y",
                 "DISPLAY_PICTURE" => "Y",
                 "DISPLAY_PREVIEW_TEXT" => "Y",
-                "AJAX_MODE" => "Y",
                 "IBLOCK_TYPE" => "news",
                 "IBLOCK_ID" => Tools::GetIDByCode("gallery"),
                 "NEWS_COUNT" => "1",
@@ -215,7 +203,6 @@ use RusHydro\Tools;
                 "DISPLAY_NAME" => "Y",
                 "DISPLAY_PICTURE" => "Y",
                 "DISPLAY_PREVIEW_TEXT" => "Y",
-                "AJAX_MODE" => "Y",
                 "IBLOCK_TYPE" => "news",
                 "IBLOCK_ID" => Tools::GetIDByCode("video"),
                 "NEWS_COUNT" => "1",
@@ -259,10 +246,6 @@ use RusHydro\Tools;
                 "MESSAGE_404" => "",
                 "PAGER_BASE_LINK" => "",
                 "PAGER_PARAMS_NAME" => "arrPager",
-                "AJAX_OPTION_JUMP" => "N",
-                "AJAX_OPTION_STYLE" => "Y",
-                "AJAX_OPTION_HISTORY" => "N",
-                "AJAX_OPTION_ADDITIONAL" => ""
             ]
         );
         ?>

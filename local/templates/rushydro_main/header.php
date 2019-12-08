@@ -19,9 +19,9 @@ CJSCore::Init(["jquery"]);
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="shortcut icon" href="<?=Config::RUSHYDRO_TEMPLATE_PATH?>img/favicons/favicon.ico" type="image/x-icon">
-    <link rel="icon" sizes="16x16" href="<?=Config::RUSHYDRO_TEMPLATE_PATH?>img/favicons/favicon-16x16.png" type="image/png">
-    <link rel="icon" sizes="32x32" href="<?=Config::RUSHYDRO_TEMPLATE_PATH?>img/favicons/favicon-32x32.png" type="image/png">
+    <!--<link rel="shortcut icon" href="<?=Config::RUSHYDRO_TEMPLATE_PATH?>img/favicons/favicon.ico" type="image/x-icon">-->
+    <!--<link rel="icon" sizes="16x16" href="<?=Config::RUSHYDRO_TEMPLATE_PATH?>img/favicons/favicon-16x16.png" type="image/png">-->
+    <!--<link rel="icon" sizes="32x32" href="<?=Config::RUSHYDRO_TEMPLATE_PATH?>img/favicons/favicon-32x32.png" type="image/png">-->
     <link rel="apple-touch-icon-precomposed" href="<?=Config::RUSHYDRO_TEMPLATE_PATH?>img/favicons/apple-touch-icon-precomposed.png">
     <link rel="apple-touch-icon" href="<?=Config::RUSHYDRO_TEMPLATE_PATH?>img/favicons/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="57x57" href="<?=Config::RUSHYDRO_TEMPLATE_PATH?>img/favicons/apple-touch-icon-57x57.png">
@@ -41,7 +41,12 @@ CJSCore::Init(["jquery"]);
     Asset::getInstance()->addCss(Config::RUSHYDRO_TEMPLATE_PATH . "styles/main.min.css");
     ?>
 </head>
-<body class="index">
+<?php if ($APPLICATION->GetCurPage() == "/") {
+    $bodyClass = "index";
+} else {
+    $bodyClass = "";
+}?>
+<body class="<?=$bodyClass?>">
 
 <?$APPLICATION->ShowPanel();?>
 

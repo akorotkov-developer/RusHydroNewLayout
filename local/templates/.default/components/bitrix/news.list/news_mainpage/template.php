@@ -12,7 +12,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-
 <h4 class="content-block_title">НОВОСТИ <a href="/news/" class="content-block_all">Все новости</a></h4>
 
 <?php foreach($arResult["ITEMS"] as $arItem){?>
@@ -25,7 +24,7 @@ $this->setFrameMode(true);
         <img src="<?=$arItem["RESIZE_PICTURE"]["src"]?>" alt="">
     </a>
     <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="content-block_link">
-        <?=$arItem["PREVIEW_TEXT"]?>
+        <?=$arItem["NAME"]?>
     </a>
 
     <?php
