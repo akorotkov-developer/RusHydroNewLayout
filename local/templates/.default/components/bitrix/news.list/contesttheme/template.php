@@ -23,7 +23,7 @@ $this->setFrameMode(true);
                 $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
                 ?>
                     <li class="dowload_unordered-list">
-                        <a href="" class="dowload_item">
+                        <a href="<?=$arItem["FILE"]["SRC"]?>" download class="dowload_item">
                             <?=$arItem["NAME"]?> (<?=$arItem["FILE"]["EXPANSION"]?>, <?=round($arItem["FILE"]["FILE_SIZE"] / 1024)?>Кб)
                         </a>
                     </li>
