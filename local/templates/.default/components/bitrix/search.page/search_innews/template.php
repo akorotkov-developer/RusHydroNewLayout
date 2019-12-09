@@ -11,12 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 ?>
-<div class="content-block_header">
-    <h1 class="h1">Результаты поиска</h1>
-    <a class="print" href="javascript:(print());">
-	    Версия для печати
-    </a>
-</div>
+<?php $APPLICATION->SetTitle("Результаты поиска");?>
 
 <div class="content-text">
     <div class="search-page">

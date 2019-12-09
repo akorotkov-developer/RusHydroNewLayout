@@ -1,0 +1,14 @@
+.competitive_table {
+	width: 100%;
+}
+.competitive_table-thead {
+	background-color: #e4ecf0;
+}
+.competitive_table-thead th {
+	padding: 10px;
+	border: 1px solid #e4ecf0;
+}
+.competitive_table tbody td {
+	padding: 10px;
+	border: 1px solid #e4ecf0;
+}
