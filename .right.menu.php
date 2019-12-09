@@ -18,7 +18,7 @@ $aMenuLinks = [
     ],
 	[
 		"Задать вопрос",
-		"/asqquestion/",
+		"#win1",
 		[],
 		["orange_class" => "buttons_list-orang"],
 		""

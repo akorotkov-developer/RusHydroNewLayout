@@ -29,58 +29,21 @@ $this->setFrameMode(true);
         <?php } ?>
     </select>
 
-    <table class="competitive_table">
-        <thead>
-            <tr class="competitive_table-thead">
-                <th>№</th>
-                <th style="width: 27%">Ф.И.О</th>
-                <th style="width: 25%">ВУЗ</th>
-                <th>Название работы</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $i = 1;
-            foreach($arResult["ITEMS"] as $arItem){?>
-                <?
-                $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-                $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-                ?>
-                <tr id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-                    <td><?=$i?></td>
-                    <td><?=$arItem["PROPERTIES"]["FIO"]["VALUE"]?></td>
-                    <td><?=$arItem["PROPERTIES"]["VUZ"]["VALUE"]?></td>
-                    <td><?=$arItem["NAME"]?></td>
-                </tr>
-            <?php
-            $i++;
-            }?>
-        </tbody>
-    </table>
+    <?php
+    $i = 1;
+    foreach($arResult["ITEMS"] as $arItem){?>
+        <?
+        $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+        $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+        ?>
 
-    <div class="win_all-items">
-        <div class="win_items -active">
-            <?php foreach($arResult["ITEMS"] as $arItem){?>
-                <?
-                $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-                $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-                ?>
-                <div class="win_item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-                    <div class="win_person-more">
-                        <div class="win_person-img"><img src="<?=$arItem["RESIZE_PICTURE"]["src"]?>"></div>
-                        <div class="win_person-text">
-                            <div class="win_person">
-                                <h5 class="win_name"><?=$arItem["NAME"]?></h5>
-                                <p class="win_status"><?=$arItem["PROPERTIES"]["POSITION"]["VALUE"]?></p>
-                                <br>
-                            </div>
-                            <?=$arItem["PREVIEW_TEXT"]?>
-                        </div>
-                    </div>
-                </div>
-            <?php }?>
+        <div id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+            <?=$arItem["PREVIEW_TEXT"]?>
         </div>
-    </div>
+    <?php
+    $i++;
+    }?>
+
 </div>
 
 <div class="content-footer">

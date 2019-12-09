@@ -30,5 +30,40 @@ use Bitrix\Main\Page\Asset;
         </div>
 
     </div>
+
+
+
+    <div class="dm-overlay" id="win1">
+        <div class="dm-table">
+            <div class="dm-cell">
+                <div class="dm-modal">
+                    <a href="#close" class="close"></a>
+                    <form action="/asqquestion/ajax.php" class="askquestion" method="post">
+                        <h2>Задать вопрос</h2>
+                        <div class="profile_blocks profile_blocks-nomarginbottom">
+                            <div class="profile_block">
+                                <label class="profile_label" for="name"><p class="profile_text">Имя *</p></label>
+                                <input id="name" type="text" name="fio" class="profile_input" required>
+                            </div>
+                            <div class="profile_block">
+                                <label class="profile_label" for="email"><p class="profile_text">Email *</p></label>
+                                <input id="email" type="email" name="email" class="profile_input" required>
+                            </div>
+                            <div class="profile_block">
+                                <label for="quest" class="profile_label"><p class="profile_text">Вопрос *</p>
+                                </label>
+                                <textarea name="" id="quest" name="question" class="profile_textarea"></textarea>
+                            </div>
+                            <div class="profile_footer-block">
+                                <input type="checkbox" id="politics" name="politics" class="profile-input" value="" autocomplete="off"/>
+                                <label for="politics" class="profile_politics">Даю согласие на обработку персональных данных</label>
+                                <button type="submit" name="submit" class="profile_submit">Отправить</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
