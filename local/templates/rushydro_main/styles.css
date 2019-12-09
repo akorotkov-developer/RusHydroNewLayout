@@ -1,3 +1,6 @@
 .navigation_link a {
     text-decoration: none;
 }
+.hidetitle {
+    display: none!important;
+}

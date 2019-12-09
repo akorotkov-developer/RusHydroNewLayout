@@ -13,13 +13,6 @@
 $this->setFrameMode(true);
 ?>
 
-<div class="content-block_header">
-    <h1 class="h1">Видеогалерея</h1>
-    <a class="print" href="javascript:(print());">
-        Версия для печати
-    </a>
-</div>
-
 <div class="content-photo">
     <select class="content-photo_select" name="select2">
         <?php if (!$_GET["year"]) {?>

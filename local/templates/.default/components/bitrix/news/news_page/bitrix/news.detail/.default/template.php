@@ -13,11 +13,6 @@
 $this->setFrameMode(true);
 ?>
 
-<h1 class="h1"><?=$arResult["NAME"]?></h1>
-<a class="print" href="javascript:(print());">
-    Версия для печати
-</a>
-
 <?php
 //список месяцев с названиями для замены
 $_monthsList = array(".01." => "января", ".02." => "февраля",

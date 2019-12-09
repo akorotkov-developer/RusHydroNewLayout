@@ -21,13 +21,6 @@ $this->setFrameMode(true);
 	<a href="<?=$arResult["FOLDER"].$arResult["URL_TEMPLATES"]["rss"]?>" title="rss" target="_self"><img alt="RSS" src="<?=$templateFolder?>/images/gif-light/feed-icon-16x16.gif" border="0" align="right" /></a>
 <?endif?>
 
-<div class="content-block_header">
-    <h1 class="h1">Новости</h1>
-    <a class="print" href="javascript:(print());">
-        Версия для печати
-    </a>
-</div>
-
 <div class="content-text">
     <?if($arParams["USE_SEARCH"]=="Y"):?>
         <?$APPLICATION->IncludeComponent(

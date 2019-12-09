@@ -159,4 +159,12 @@ CJSCore::Init(["jquery"]);
                             "SITE_ID" => "s1"
                         )
                     );?>
-            <?}
+            <?php }?>
+
+            <div class="content-block_header <?$APPLICATION->ShowProperty('HIDE_TITLE')?>">
+                <h1 class="h1"><?php $APPLICATION->ShowTitle();?></h1>
+                <a class="print" href="javascript:(print());">
+                    Версия для печати
+                </a>
+            </div>
+

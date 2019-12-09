@@ -1,18 +1,11 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Подать заявку");
+$APPLICATION->SetTitle("Анкета участника конкурса «Энергия развития»");
 $APPLICATION->AddChainItem($APPLICATION->GetTitle());
 
 use RusHydro\Config;
 ?>
 <script src="/submitapplication/script.js"></script>
-
-<div class="content-block_header">
-    <h1 class="h1">Анкета участника конкурса «Энергия развития»</h1>
-    <a class="print" href="javascript:(print());">
-        Версия для печати
-    </a>
-</div>
 
 <div class="content-text">
     <form action="ajax.php" class="profile" method="post">

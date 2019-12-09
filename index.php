@@ -1,6 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Рус Гидро Объединяя энергию");
+$APPLICATION->SetPageProperty("HIDE_TITLE", "hidetitle");
 
 use RusHydro\Config;
 use RusHydro\Tools;
