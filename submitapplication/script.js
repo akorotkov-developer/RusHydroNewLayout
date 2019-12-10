@@ -18,7 +18,15 @@ $( document ).ready(function() {
             url: 'ajax.php',
             data: msg,
             success: function(data) {
-                console.log(jQuery.parseJSON(data));
+                if (jQuery.parseJSON(data) == "Y") {
+                    $("form.profile").html("Спасибо, ваше анкета отправлена!");
+                    $("form.profile").css({
+                        "color": "#026340",
+                        "font-size": "16px",
+                        "font-weight": "bold",
+                        "margin-top": "50px",
+                    })
+                }
             },
             error:  function(xhr, str){
                 alert('Возникла ошибка: ' + xhr.responseCode);

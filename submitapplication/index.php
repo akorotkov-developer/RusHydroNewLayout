@@ -8,7 +8,7 @@ use RusHydro\Config;
 <script src="/submitapplication/script.js"></script>
 
 <div class="content-text">
-    <form action="ajax.php" class="profile" method="post">
+    <form action="ajax.php" class="profile" method="post" ENCTYPE="multipart/form-data">
         <div class="profile_blocks">
             <div class="profile_block">
                 <label class="profile_label" for="name"><p class="profile_text">Фамилия, Имя, Отчество *</p></label>
@@ -37,7 +37,7 @@ use RusHydro\Config;
             <div class="profile_block">
                 <label for="interests" class="profile_label"><p class="profile_text">Научные интересы:</p>
                 </label>
-                <textarea name="" id="interests" name="academic_interest" class="profile_textarea"></textarea>
+                <textarea name="interests" id="interests" name="academic_interest" class="profile_textarea"></textarea>
             </div>
             <div class="profile_block">
                 <label for="uploade-file" class="profile_label -file"><p class="profile_text">Загрузить работу:</p>
@@ -57,7 +57,7 @@ use RusHydro\Config;
                 <input id="address" type="text" name="address" class="profile_input">
             </div>
             <div class="profile_block">
-                <label for="phone" class="profile_label"><p class="profile_text">Контактный телефон (с указанием кода города)</p>
+                <label for="phone" class="profile_label"><p class="profile_text">Контактный телефон (с указанием кода города):</p>
                 </label>
                 <input id="phone" type="text" name="contact_phone" class="profile_input">
             </div>
@@ -98,10 +98,10 @@ use RusHydro\Config;
         </div>
         <div class="profile_footer">
             <div class="profile_footer-block">
-                <img src="<?=Config::RUSHYDRO_TEMPLATE_PATH?>img/recaptcha.png" alt="">
+                <div class="g-recaptcha" data-sitekey="<?=Config::GOOGLE_PUBLIC_KEY?>"></div>
             </div>
             <div class="profile_footer-block">
-                <input type="checkbox" id="profile_politics" name="agree" class="profile-input" value="" autocomplete="off"/>
+                <input type="checkbox" id="profile_politics" name="agree" class="profile-input" value="" autocomplete="off" required/>
                 <label for="profile_politics" class="profile_politics">Даю согласие на обработку персональных данных</label>
                 <button type="submit" name="submit" class="profile_submit">Отправить</button>
             </div>

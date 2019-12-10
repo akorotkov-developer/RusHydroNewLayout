@@ -1,50 +1,56 @@
 <?php
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
-$_POST["download_file"] = addslashes($_POST["download_file"]);
-if (isset ($_POST['contactFF'])) {
-    $to = "name@yandex.ru"; // поменять на свой электронный адрес
-    $from = "rosvodokanal@rig.intelgroup.ru";
-    $subject = "Заполнена контактная форма с ".$_SERVER['HTTP_REFERER'];
-    $message = "Имя: ".$_POST['nameFF']."\nEmail: ".$from."\nIP: ".$_SERVER['REMOTE_ADDR']."\nСообщение: ".$_POST['messageFF'];
-    $boundary = md5(date('r', time()));
-    $filesize = '';
-    $headers = "MIME-Version: 1.0\r\n";
-    $headers .= "From: " . $from . "\r\n";
-    $headers .= "Reply-To: " . $from . "\r\n";
-    $headers .= "Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n";
-    $message="
-Content-Type: multipart/mixed; boundary=\"$boundary\"
+use RusHydro\Config;
 
---$boundary
-Content-Type: text/plain; charset=\"utf-8\"
-Content-Transfer-Encoding: 7bit
+$APPLICATION->RestartBuffer();
 
-$message";
-    for($i=0;$i<count($_FILES['fileFF']['name']);$i++) {
-        if(is_uploaded_file($_FILES['fileFF']['tmp_name'][$i])) {
-            $attachment = chunk_split(base64_encode(file_get_contents($_FILES['fileFF']['tmp_name'][$i])));
-            $filename = $_FILES['fileFF']['name'][$i];
-            $filetype = $_FILES['fileFF']['type'][$i];
-            $filesize += $_FILES['fileFF']['size'][$i];
-            $message.="
+$adminEmail = $_POST["admin_email"];
 
---$boundary
-Content-Type: \"$filetype\"; name=\"$filename\"
-Content-Transfer-Encoding: base64
-Content-Disposition: attachment; filename=\"$filename\"
+$fio = strip_tags($_POST["fio"]);
+$birthdate = strip_tags($_POST["birthdate"]);
+$studyhome = strip_tags($_POST["studyhome"]);
+$fackultet = strip_tags($_POST["fackultet"]);
+$kurs = strip_tags($_POST["kurs"]);
+$work = strip_tags($_POST["work"]);
+$interests = strip_tags($_POST["interests"]);
+$download_link = strip_tags($_POST["download_link"]);
 
-$attachment";
-        }
-    }
-    $message.="
---$boundary--";
+$address = strip_tags($_POST["address"]);
+$contact_phone = strip_tags($_POST["contact_phone"]);
+$email = strip_tags($_POST["email"]);
+$who_did_you_know = strip_tags($_POST["who_did_you_know"]);
 
-    if ($filesize < 10000000) { // проверка на общий размер всех файлов. Многие почтовые сервисы не принимают вложения больше 10 МБ
-        mail($to, $subject, $message, $headers);
-        echo $_POST['nameFF'].', Ваше сообщение получено, спасибо!';
-    } else {
-        echo 'Извините, письмо не отправлено. Размер всех файлов превышает 10 МБ.';
-    }
-}
+$work_name = strip_tags($_POST["work_name"]);
+$select = strip_tags($_POST["select"]);
+$academic_director = strip_tags($_POST["academic_director"]);
+$work_position_academic_director = strip_tags($_POST["work_position_academic_director"]);
 
-echo json_encode($_POST);
+$emailMessage = "Фамилия, Имя, Отчество: " . $fio . "\n";
+$emailMessage .= "Дата рождения: " . $birthdate . "\n";
+$emailMessage .= "Учебное заведение: " . $studyhome . "\n";
+$emailMessage .= "Факультет (специальность, специализация): " . $fackultet . "\n";
+$emailMessage .= "Курс / год обучения: " . $kurs . "\n";
+$emailMessage .= "Место работы: " . $work . "\n";
+$emailMessage .= "Научные интересы: " . $interests . "\n";
+$emailMessage .= "Ссылка на скачивание работы: " . $download_link . "\n\n";
+
+$emailMessage .= "Контактная информация\n";
+$emailMessage .= "Адрес (с указанием почтового индекса):" . $address . "\n";
+$emailMessage .= "Контактный телефон (с указанием кода города): " . $contact_phone . "\n";
+$emailMessage .= "Электронный адрес: " . $email . "\n";
+$emailMessage .= "Напишите, пожалуйста, откуда Вы узнали о конкурсе: " . $who_did_you_know . "\n\n";
+
+$emailMessage .= "Информация о конкурсной работе\n";
+$emailMessage .= "Название работы: " . $work_name . "\n";
+$emailMessage .= "Тема работы: " . $select . "\n";
+$emailMessage .= "Научный руководитель: " . $academic_director . "\n";
+$emailMessage .= "Должность и место работы научного руководителя: " . $work_position_academic_director . "\n";
+
+mail($adminEmail, "Заполнена форма Анкета участника конкурса «Энергия развития»", $emailMessage);
+
+echo json_encode("Y");
+
+die();
+
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
