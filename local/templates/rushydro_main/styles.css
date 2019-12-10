@@ -103,6 +103,18 @@
 .profile_blocks-nomarginbottom {
     margin-bottom: 0px!important;
 }
-#politics {
-    display:none;
+.profile_footer-block-sitefooter .g-recaptcha {
+    margin-top: 20px;
+}
+.profile_footer-block-sitefooter .profile_politics {
+    padding-left: 20px;
+    margin-left: -15px;
+}
+.profile_footer-block-sitefooter .profile_politics::after {
+    left: 0px;
+}
+.profile_footer-block-sitefooter #politics {
+    left: 1px;
+    top: 2px;
+    position: relative;
 }

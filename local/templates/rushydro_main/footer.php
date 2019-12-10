@@ -24,14 +24,12 @@ use Bitrix\Main\Page\Asset;
                 </div>
 
             </div>
+            <script src="https://www.google.com/recaptcha/api.js"></script>
             <script src="<?=Config::RUSHYDRO_TEMPLATE_PATH?>js/main.min.js"></script>
             <script src="<?=Config::RUSHYDRO_TEMPLATE_PATH?>js/vendor.min.js"></script>
             <script src="<?=Config::RUSHYDRO_TEMPLATE_PATH?>js/script.js"></script>
         </div>
-
     </div>
-
-
 
     <div class="dm-overlay" id="win1">
         <div class="dm-table">
@@ -39,6 +37,7 @@ use Bitrix\Main\Page\Asset;
                 <div class="dm-modal">
                     <a href="#close" class="close"></a>
                     <form action="/asqquestion/ajax.php" class="askquestion" method="post">
+                        <input type="hidden" name="email_admin" value="<?=COption::GetOptionString("main", "email_from");?>">
                         <h2>Задать вопрос</h2>
                         <div class="profile_blocks profile_blocks-nomarginbottom">
                             <div class="profile_block">
@@ -52,11 +51,12 @@ use Bitrix\Main\Page\Asset;
                             <div class="profile_block">
                                 <label for="quest" class="profile_label"><p class="profile_text">Вопрос *</p>
                                 </label>
-                                <textarea name="" id="quest" name="question" class="profile_textarea"></textarea>
+                                <textarea name="message" id="quest" name="question" class="profile_textarea"></textarea>
                             </div>
-                            <div class="profile_footer-block">
-                                <input type="checkbox" id="politics" name="politics" class="profile-input" value="" autocomplete="off"/>
+                            <div class="profile_footer-block profile_footer-block-sitefooter">
+                                <input type="checkbox" id="politics" name="politics" class="profile-input" value="" autocomplete="off" required/>
                                 <label for="politics" class="profile_politics">Даю согласие на обработку персональных данных</label>
+                                <div class="g-recaptcha" data-sitekey="<?=Config::GOOGLE_PUBLIC_KEY?>"></div>
                                 <button type="submit" name="submit" class="profile_submit">Отправить</button>
                             </div>
                         </div>
@@ -65,5 +65,6 @@ use Bitrix\Main\Page\Asset;
             </div>
         </div>
     </div>
+
 </body>
 </html>
