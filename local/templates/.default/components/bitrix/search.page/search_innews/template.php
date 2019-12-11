@@ -47,10 +47,9 @@
                 <button type="submit" class="search-page_submit">Найти</button>
 
             <noindex>
-            <div class="search-advanced">
-                <div class="search-advanced-result">
+            <div>
                     <?if(is_object($arResult["NAV_RESULT"])):?>
-                        <div class="search-result"><?echo GetMessage("CT_BSP_FOUND")?>: <?echo $arResult["NAV_RESULT"]->SelectedRowsCount()?></div>
+                        <p class="search-page_result"><?echo GetMessage("CT_BSP_FOUND")?>: <?echo $arResult["NAV_RESULT"]->SelectedRowsCount()?></p>
                     <?endif;?>
                     <?
                     $arWhere = array();
@@ -93,7 +92,7 @@
                     if(count($arWhere))
                         echo GetMessage("CT_BSP_WHERE_LABEL"),': ',implode(", ", $arWhere);
                     ?>
-                </div><?//div class="search-advanced-result"?>
+                <?//div class="search-advanced-result"?>
                 <?if($arParams["SHOW_WHERE"] || $arParams["SHOW_WHEN"]):?>
                     <script>
                     function switch_search_params()
@@ -198,7 +197,7 @@
             </div><br /><?
         endif;?>
 
-        <div class="search-result">
+        <div class="search-page_items">
         <?if($arResult["REQUEST"]["QUERY"] === false && $arResult["REQUEST"]["TAGS"] === false):?>
         <?elseif($arResult["ERROR_CODE"]!=0):?>
             <p><?=GetMessage("CT_BSP_ERROR")?></p>
@@ -231,57 +230,61 @@
             </table>
         <?elseif(count($arResult["SEARCH"])>0):?>
             <?if($arParams["DISPLAY_TOP_PAGER"] != "N") echo $arResult["NAV_STRING"]?>
-            <?foreach($arResult["SEARCH"] as $arItem):?>
-                <div class="search-item">
-                    <h4><a href="<?echo $arItem["URL"]?>"><?echo $arItem["TITLE_FORMATED"]?></a></h4>
-                    <div class="search-preview"><?echo $arItem["BODY_FORMATED"]?></div>
-                    <?if(
-                        ($arParams["SHOW_ITEM_DATE_CHANGE"] != "N")
-                        || ($arParams["SHOW_ITEM_PATH"] == "Y" && $arItem["CHAIN_PATH"])
-                        || ($arParams["SHOW_ITEM_TAGS"] != "N" && !empty($arItem["TAGS"]))
-                    ):?>
-                    <div class="search-item-meta">
-                        <?if (
-                            $arParams["SHOW_RATING"] == "Y"
-                            && strlen($arItem["RATING_TYPE_ID"]) > 0
-                            && $arItem["RATING_ENTITY_ID"] > 0
-                        ):?>
-                        <div class="search-item-rate">
-                        <?
-                        $APPLICATION->IncludeComponent(
-                            "bitrix:rating.vote", $arParams["RATING_TYPE"],
-                            Array(
-                                "ENTITY_TYPE_ID" => $arItem["RATING_TYPE_ID"],
-                                "ENTITY_ID" => $arItem["RATING_ENTITY_ID"],
-                                "OWNER_ID" => $arItem["USER_ID"],
-                                "USER_VOTE" => $arItem["RATING_USER_VOTE_VALUE"],
-                                "USER_HAS_VOTED" => $arItem["RATING_USER_VOTE_VALUE"] == 0? 'N': 'Y',
-                                "TOTAL_VOTES" => $arItem["RATING_TOTAL_VOTES"],
-                                "TOTAL_POSITIVE_VOTES" => $arItem["RATING_TOTAL_POSITIVE_VOTES"],
-                                "TOTAL_NEGATIVE_VOTES" => $arItem["RATING_TOTAL_NEGATIVE_VOTES"],
-                                "TOTAL_VALUE" => $arItem["RATING_TOTAL_VALUE"],
-                                "PATH_TO_USER_PROFILE" => $arParams["~PATH_TO_USER_PROFILE"],
-                            ),
-                            $component,
-                            array("HIDE_ICONS" => "Y")
-                        );?>
-                        </div>
-                        <?endif;?>
-                        <?if($arParams["SHOW_ITEM_TAGS"] != "N" && !empty($arItem["TAGS"])):?>
-                            <div class="search-item-tags"><label><?echo GetMessage("CT_BSP_ITEM_TAGS")?>: </label><?
-                            foreach ($arItem["TAGS"] as $tags):
-                                ?><a href="<?=$tags["URL"]?>"><?=$tags["TAG_NAME"]?></a> <?
-                            endforeach;
-                            ?></div>
-                        <?endif;?>
 
-                        <?if($arParams["SHOW_ITEM_DATE_CHANGE"] != "N"):?>
-                            <div class="search-item-date"><label><?echo GetMessage("CT_BSP_DATE_CHANGE")?>: </label><span><?echo $arItem["DATE_CHANGE"]?></span></div>
-                        <?endif;?>
+
+                <?foreach($arResult["SEARCH"] as $arItem):?>
+                    <div class="search-item">
+                        <a href="<?echo $arItem["URL"]?>" class="search-item_title"><?echo $arItem["TITLE_FORMATED"]?></a></h4>
+                        <p><?echo $arItem["BODY_FORMATED"]?></p>
+                        <?if(
+                            ($arParams["SHOW_ITEM_DATE_CHANGE"] != "N")
+                            || ($arParams["SHOW_ITEM_PATH"] == "Y" && $arItem["CHAIN_PATH"])
+                            || ($arParams["SHOW_ITEM_TAGS"] != "N" && !empty($arItem["TAGS"]))
+                        ):?>
+                        <div class="search-item_date">
+                            <?if (
+                                $arParams["SHOW_RATING"] == "Y"
+                                && strlen($arItem["RATING_TYPE_ID"]) > 0
+                                && $arItem["RATING_ENTITY_ID"] > 0
+                            ):?>
+                            <div class="search-item-rate">
+                            <?
+                            $APPLICATION->IncludeComponent(
+                                "bitrix:rating.vote", $arParams["RATING_TYPE"],
+                                Array(
+                                    "ENTITY_TYPE_ID" => $arItem["RATING_TYPE_ID"],
+                                    "ENTITY_ID" => $arItem["RATING_ENTITY_ID"],
+                                    "OWNER_ID" => $arItem["USER_ID"],
+                                    "USER_VOTE" => $arItem["RATING_USER_VOTE_VALUE"],
+                                    "USER_HAS_VOTED" => $arItem["RATING_USER_VOTE_VALUE"] == 0? 'N': 'Y',
+                                    "TOTAL_VOTES" => $arItem["RATING_TOTAL_VOTES"],
+                                    "TOTAL_POSITIVE_VOTES" => $arItem["RATING_TOTAL_POSITIVE_VOTES"],
+                                    "TOTAL_NEGATIVE_VOTES" => $arItem["RATING_TOTAL_NEGATIVE_VOTES"],
+                                    "TOTAL_VALUE" => $arItem["RATING_TOTAL_VALUE"],
+                                    "PATH_TO_USER_PROFILE" => $arParams["~PATH_TO_USER_PROFILE"],
+                                ),
+                                $component,
+                                array("HIDE_ICONS" => "Y")
+                            );?>
+                            </div>
+                            <?endif;?>
+                            <?if($arParams["SHOW_ITEM_TAGS"] != "N" && !empty($arItem["TAGS"])):?>
+                                <div class="search-item-tags"><label><?echo GetMessage("CT_BSP_ITEM_TAGS")?>: </label><?
+                                foreach ($arItem["TAGS"] as $tags):
+                                    ?><a href="<?=$tags["URL"]?>"><?=$tags["TAG_NAME"]?></a> <?
+                                endforeach;
+                                ?></div>
+                            <?endif;?>
+
+                            <?if($arParams["SHOW_ITEM_DATE_CHANGE"] != "N"):?>
+                                <p><?echo GetMessage("CT_BSP_DATE_CHANGE")?>: <?echo $arItem["DATE_CHANGE"]?></p>
+                            <?endif;?>
+                        </div>
+                        <?endif?>
                     </div>
-                    <?endif?>
-                </div>
-            <?endforeach;?>
+                <?endforeach;?>
+
+
             <?if($arParams["DISPLAY_BOTTOM_PAGER"] != "N") echo $arResult["NAV_STRING"]?>
             <?if($arParams["SHOW_ORDER_BY"] != "N"):?>
                 <div class="search-sorting"><label><?echo GetMessage("CT_BSP_ORDER")?>:</label>&nbsp;

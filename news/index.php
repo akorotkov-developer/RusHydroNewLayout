@@ -3,8 +3,8 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Новости");
 
 use RusHydro\Tools;
-?>
-<?$APPLICATION->IncludeComponent(
+
+$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"news_page", 
 	array(
@@ -18,7 +18,9 @@ use RusHydro\Tools;
 		"YANDEX" => "N",
 		"USE_RATING" => "N",
 		"USE_CATEGORIES" => "N",
-		"USE_FILTER" => "N",
+		"USE_FILTER" => "Y",
+		"FILTER_FIELD_CODE" => ["DATE_ACTIVE_FROM"],
+		"FILTER_NAME" => "arrFilter",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_ORDER1" => "DESC",
 		"SORT_BY2" => "SORT",

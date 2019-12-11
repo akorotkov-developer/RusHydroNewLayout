@@ -24,7 +24,10 @@ $this->setFrameMode(false);
 		"CACHE_TYPE" => $arParams["CACHE_TYPE"],
 		"CACHE_TIME" => $arParams["CACHE_TIME"],
 		"SET_TITLE" => $arParams["SET_TITLE"],
-		"arrFILTER_iblock_".$arParams["IBLOCK_TYPE"] => Array($arParams["IBLOCK_ID"])
+		"arrFILTER_iblock_".$arParams["IBLOCK_TYPE"] => Array($arParams["IBLOCK_ID"]),
+		"PAGER_TEMPLATE" => "news_pager",
+		"PAGE_RESULT_COUNT" => "10",
+		"DISPLAY_TOP_PAGER" => "N",
 	),
 	$component
 );?>
