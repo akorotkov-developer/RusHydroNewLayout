@@ -37,7 +37,7 @@ $this->setFrameMode(true);
             ?>
 
             <div class="content-photo_img" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-                <a rel="win__group" class="fb" href="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>">
+                <a rel="win__group" class="fb" href="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" title="<?=$arItem["PREVIEW_TEXT"]?>">
                     <img src="<?=$arItem["RESIZE_PICTURE"]["src"]?>">
                 </a>
             </div>
