@@ -19,3 +19,9 @@ div.news-list img.preview_picture
 .win_person-more .win_person-text {
 	width: 67%;
 }
+.win_name2 {
+	font-weight: 600;
+	color: #0066a6;
+	font-size: 14px;
+	margin: 0;
+}

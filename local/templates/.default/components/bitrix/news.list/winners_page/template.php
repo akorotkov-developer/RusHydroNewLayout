@@ -43,7 +43,7 @@ $this->setFrameMode(true);
                         <div class="win_person-img"><img src="<?=$arItem["RESIZE_PICTURE"]["src"]?>"></div>
                         <div class="win_person-text">
                             <div class="win_person">
-                                <h5 class="win_name"><?=$arItem["NAME"]?></h5>
+                                <h5 class="win_name2"><?=$arItem["NAME"]?></h5>
                                 <p class="win_status"><?=$arItem["PROPERTIES"]["POSITION"]["VALUE"]?></p>
                                 <br>
                             </div>
