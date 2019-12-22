@@ -37,7 +37,9 @@ $this->setFrameMode(true);
             ?>
             <div class="content-photo_item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
                 <div class="content-photo_video">
-                    <iframe width="100%" height="100%" src="<?=$arItem["PROPERTIES"]["VIDEO_URL"]["VALUE"]?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <video width="100%" height="100%" controls="controls">
+                        <source src="<?=$arItem["PROPERTIES"]["VIDEO_URL"]["VALUE"]?>">
+                    </video>
                 </div>
                 <p>
                     <?=$arItem["NAME"];?>

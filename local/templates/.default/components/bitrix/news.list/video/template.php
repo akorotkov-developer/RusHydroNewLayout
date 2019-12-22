@@ -21,8 +21,11 @@ $this->setFrameMode(true);
     $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
     ?>
 
+
     <div class="content-block_image" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-        <iframe width="100%" height="100%" src="<?=$arItem["PROPERTIES"]["VIDEO_URL"]["VALUE"]?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <video width="100%" height="100%" controls="controls">
+            <source src="<?=$arItem["PROPERTIES"]["VIDEO_URL"]["VALUE"]?>">
+        </video>
     </div>
 
     <?php
