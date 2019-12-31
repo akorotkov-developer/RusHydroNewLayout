@@ -121,3 +121,9 @@
 .strory_concurs .win_items .win_item  .win_person-more .win_person-text{
     width: 100%;
 }
+.content-block_item-video .content-block_title{
+    margin-bottom: 22px;
+}
+.content-gallery {
+    margin-bottom: 13px;
+}

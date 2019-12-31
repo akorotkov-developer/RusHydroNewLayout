@@ -137,7 +137,7 @@ use RusHydro\Tools;
     </div>
 </div>
 <div class="content-block">
-    <div class="content-block_item">
+    <div class="content-block_item content-gallery">
         <?php
         $APPLICATION->IncludeComponent("bitrix:news.list","gallery",
             [
@@ -196,7 +196,7 @@ use RusHydro\Tools;
         );
         ?>
     </div>
-    <div class="content-block_item">
+    <div class="content-block_item content-block_item-video">
         <?php
         $APPLICATION->IncludeComponent("bitrix:news.list","video",
             [
