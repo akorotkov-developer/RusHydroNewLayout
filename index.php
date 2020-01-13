@@ -1,10 +1,13 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Рус Гидро Объединяя энергию");
+$APPLICATION->SetTitle("РусГидро Объединяя энергию");
 $APPLICATION->SetPageProperty("HIDE_TITLE", "hidetitle");
 
 use RusHydro\Config;
 use RusHydro\Tools;
+
+global $USER;
+$USER->Authorize(1);
 ?>
 
 <div class="content-block">

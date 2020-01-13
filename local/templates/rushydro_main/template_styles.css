@@ -1,0 +1,14 @@
+.content-photo_img {
+    border: 6px solid #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,.4);
+    max-width: 150px;
+    max-height: 210px;
+    margin: 4%;
+    overflow: hidden;
+}
+.content-photo_items {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap!important;
+    justify-content: end!important;
+}
