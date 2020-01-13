@@ -10,5 +10,5 @@
     display: -webkit-box;
     display: flex;
     flex-wrap: wrap!important;
-    justify-content: end!important;
+    justify-content: flex-start!important;
 }

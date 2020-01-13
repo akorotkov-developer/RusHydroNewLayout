@@ -62,7 +62,7 @@ use RusHydro\Tools;
     ?>
 </div>
 <div class="content-block">
-    <div class="content-block_item">
+    <div class="content-block_item content-block_item_mainblock">
         <h4 class="content-block_title">Главное</h4>
         <div class="content-block_text-block">
             <?$APPLICATION->IncludeComponent(

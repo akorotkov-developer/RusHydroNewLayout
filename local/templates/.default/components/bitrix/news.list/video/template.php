@@ -22,8 +22,8 @@ $this->setFrameMode(true);
     ?>
 
 
-    <div class="content-block_image content-block_video" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-        <video width="100%" height="100%" controls="controls">
+    <div class="content-block_video" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+        <video width="100%" height="197px" controls="controls">
             <source src="<?=$arItem["PROPERTIES"]["VIDEO_URL"]["VALUE"]?>">
         </video>
     </div>

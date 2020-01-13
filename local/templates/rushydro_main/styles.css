@@ -122,14 +122,18 @@
     width: 100%;
 }
 .content-block_item-video .content-block_title{
-    margin-bottom: 22px;
+/*    margin-bottom: 22px;*/
 }
 .content-gallery {
-    margin-bottom: 13px;
+/*    margin-bottom: 13px;*/
+    height: 235px;
 }
 .content-block_video {
-    margin-bottom: 2px;
+/*    margin-bottom: 2px;*/
 }
 .video_block_name {
     color: #0066a6;
+}
+.content-block_item_mainblock {
+    height: 235px;
 }
