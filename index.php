@@ -5,9 +5,6 @@ $APPLICATION->SetPageProperty("HIDE_TITLE", "hidetitle");
 
 use RusHydro\Config;
 use RusHydro\Tools;
-
-global $USER;
-$USER->Authorize(1);
 ?>
 
 <div class="content-block">
