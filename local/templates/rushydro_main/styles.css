@@ -130,10 +130,28 @@
 }
 .content-block_video {
 /*    margin-bottom: 2px;*/
+    background-color: #000;
 }
 .video_block_name {
     color: #0066a6;
 }
 .content-block_item_mainblock {
     height: 235px;
+}
+.profile_label_text {
+    position: relative;
+    top: -21px;
+    max-width: 300px;
+    overflow: hidden;
+    max-height: 20px;
+    white-space: nowrap;
+}
+.inputfile_block {
+    display: none;
+}
+.send_ok_message {
+    color: rgb(2, 99, 64);
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 50px;
 }
