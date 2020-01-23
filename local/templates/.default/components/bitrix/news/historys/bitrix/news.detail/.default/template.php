@@ -44,7 +44,7 @@ $currentDate = str_replace($_mD, " ".$_monthsList[$_mD]." ", $currentDate);
     </div>
 </div>
 <div class="content-footer">
-    <a href="/news/" class="content-footer_back">← К списку новостей</a>
+    <a href="/community/istorii-uspekha/" class="content-footer_back">← К списку новостей</a>
     <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.min.js"></script>
     <script src="https://yastatic.net/share2/share.min.js"></script>
     <div class="ya-share2" data-шservices="collections,vkontakte,facebook,odnoklassniki,moimir"></div>
