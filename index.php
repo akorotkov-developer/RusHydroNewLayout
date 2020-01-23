@@ -40,7 +40,7 @@ use RusHydro\Tools;
             "PARENT_SECTION" => "",
             "PARENT_SECTION_CODE" => "",
             "INCLUDE_SUBSECTIONS" => "Y",
-            "CACHE_TYPE" => "A",
+            "CACHE_TYPE" => "N",
             "CACHE_TIME" => "3600",
             "CACHE_FILTER" => "Y",
             "CACHE_GROUPS" => "Y",

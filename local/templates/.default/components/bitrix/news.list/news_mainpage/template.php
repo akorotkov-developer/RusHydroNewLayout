@@ -24,7 +24,9 @@ $this->setFrameMode(true);
         <img src="<?=$arItem["RESIZE_PICTURE"]["src"]?>" alt="">
     </a>
     <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="content-block_link">
-        <?=$arItem["NAME"]?>
+        <?php
+        echo date("d.m.Y", strtotime($arItem["ACTIVE_FROM"]));
+        ?> | <?=$arItem["NAME"]?>
     </a>
 
     <?php
