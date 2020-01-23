@@ -1,27 +1,32 @@
 <?php
 $arUrlRewrite=array (
-  0 => 
-  array (
-    'CONDITION' => '#^/services/#',
+    0 =>
+    array (
+    'CONDITION' => '#^/rest/#',
     'RULE' => '',
-    'ID' => 'bitrix:catalog',
-    'PATH' => '/services/index.php',
+    'ID' => NULL,
+    'PATH' => '/bitrix/services/rest/index.php',
     'SORT' => 100,
-  ),
-  1 => 
-  array (
-    'CONDITION' => '#^/products/#',
-    'RULE' => '',
-    'ID' => 'bitrix:catalog',
-    'PATH' => '/products/index.php',
-    'SORT' => 100,
-  ),
-  2 => 
-  array (
+    ),
+    1 =>
+    array (
     'CONDITION' => '#^/news/#',
     'RULE' => '',
     'ID' => 'bitrix:news',
     'PATH' => '/news/index.php',
     'SORT' => 100,
-  ),
+    ),
+    2 =>  array (
+        'CONDITION' => '#^/community/istorii-uspekha/#',
+        'RULE' => '',
+        'ID' => 'bitrix:news',
+        'PATH' => '/community/istorii-uspekha/index.php',
+        'SORT' => 100,
+    ),
+    3 => array (
+        'CONDITION' => '#^/community/istorii-uspekha/([a-zA-Z0-9\\.\\-_]+)/?.*#',
+        'RULE' => 'ELEMENT_ID=$1',
+        'PATH' => '/community/istorii-uspekha/index.php',
+        'SORT' => 100,
+    ),
 );
