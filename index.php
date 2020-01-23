@@ -17,7 +17,7 @@ use RusHydro\Tools;
             "DISPLAY_PREVIEW_TEXT" => "Y",
             "IBLOCK_TYPE" => "news",
             "IBLOCK_ID" => Tools::GetIDByCode("quote_day"),
-            "NEWS_COUNT" => "1",
+            "NEWS_COUNT" => "999",
             "SORT_BY1" => "ACTIVE_FROM",
             "SORT_ORDER1" => "DESC",
             "SORT_BY2" => "SORT",

@@ -14,21 +14,19 @@ $this->setFrameMode(true);
 ?>
 
 <h4 class="content-block_title">Цитата дня</h4>
-<?php foreach($arResult["ITEMS"] as $arItem){?>
-    <?
-    $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-    $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-    ?>
-    <div class="content-block_image" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-        <img src="<?=$arItem["RESIZE_PICTURE"]["src"]?>" alt="">
-    </div>
-
-    <div class="content-block_item-text">
-        <?=$arItem["PREVIEW_TEXT"]?>
-    </div>
 <?php
-    break;
-}
+$arItem = $arResult["ITEMS"][rand(0, count($arResult["ITEMS"]) - 1)];
+
+$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 ?>
+<div class="content-block_image" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+    <img src="<?=$arItem["RESIZE_PICTURE"]["src"]?>" alt="">
+</div>
+
+<div class="content-block_item-text">
+    <?=$arItem["PREVIEW_TEXT"]?>
+</div>
+
 
 
