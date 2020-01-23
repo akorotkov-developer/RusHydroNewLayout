@@ -90,20 +90,56 @@ use RusHydro\Config;
                 <label for="topic-work" class="profile_label">Тема работы:
                 </label>
                 <select class="profile_select" name="select">
-                    <option class="profile_option" selected="selected">Современные методы управления
-                        водно-энергетическими режимами каскадов ГЭС
+                    <option class="profile_option" selected="selected">
+                        Научно-техническое обоснование ГЭС: современные методы принятия решения о выборе створов и параметров проектируемых ГЭС, новые методы инженерных расчетов, моделирование, риски и экономика. Современные методы оценки воздействия гидроэнергетических объектов на окружающую среду.
                     </option>
-                    <option class="profile_option">Современные методы управления водно-энергетическими режимами
-                        каскадов ГЭС 2
+                    <option class="profile_option">
+                        Современные подходы к мониторингу и диагностике состояния оборудования и гидротехнических сооружений ГЭС и управлению состоянием оборудования и гидротехнических сооружений.
                     </option>
-                    <option class="profile_option">Современные методы управления водно-энергетическими режимами
-                        каскадов ГЭС 3
+                    <option class="profile_option">
+                        Современные методы управления водноэнергетическими режимами каскадов ГЭС.
                     </option>
-                    <option class="profile_option">Современные методы управления водно-энергетическими режимами
-                        каскадов ГЭС 4
+                    <option class="profile_option">
+                        Гидроэнергетика и экология.
                     </option>
-                    <option class="profile_option">Современные методы управления водно-энергетическими режимами
-                        каскадов ГЭС
+                    <option class="profile_option">
+                        Теплоэнергетика и экология.
+                    </option>
+                    <option class="profile_option">
+                        Энергетические комплексы: новые компоновки, технические и технологические решения.
+                    </option>
+                    <option class="profile_option">
+                        Современные технологии строительства ГЭС/ГАЭС, ТЭС, сетевых комплексов.
+                    </option>
+                    <option class="profile_option">
+                        Перспективные технологии аккумулирования и хранения энергии.
+                    </option>
+                    <option class="profile_option">
+                        Безопасность и надежность энергообъектов.
+                    </option>
+                    <option class="profile_option">
+                        Энергоэффективные решения в гидро- и теплоэнергетике.
+                    </option>
+                    <option class="profile_option">
+                        Возобновляемые источники энергии. Стратегия развития альтернативной энергетики.
+                    </option>
+                    <option class="profile_option">
+                        Виды, технологии формирования и свойства вторичных продуктов сжигания угольного топлива (золошлаковых материалов) и их роль в обеспечении экологической безопасности и ресурсной эффективности угольных ТЭС и котельных.
+                    </option>
+                    <option class="profile_option">
+                        Разработка типового проекта мини-ГЭС контейнерного типа в действующих створах гидротехнических объектов.
+                    </option>
+                    <option class="profile_option">
+                        Автоматизация расчета режима работы каскада ГЭС на основе требований водопользователей.
+                    </option>
+                    <option class="profile_option">
+                        Методы интеллектуального прогнозирования отказов оборудования электроэнергетических предприятий.
+                    </option>
+                    <option class="profile_option">
+                        Применение систем видеоаналитики для повышения безопасности и надежности энергообъектов.
+                    </option>
+                    <option class="profile_option">
+                        Внедрение на ТЭС системы непрерывного контроля и учета вредных выбросов ТЭС в атмосферу в соответствии с Федеральным законом «Об охране окружающей среды».
                     </option>
                 </select>
             </div>
@@ -119,7 +155,7 @@ use RusHydro\Config;
             </div>
             <? if ($_GET["tst"] == "tst") {
                 ?>
-                <input type="hidden" name="admin_email" value="ivanov_artem@mail.ru, artem.ivanov@intelgroup.ru">
+                <input type="hidden" name="admin_email" value="89065267799@mail.ru">
             <?
             } else {?>
                 <input type="hidden" name="admin_email" value="<?php echo COption::GetOptionString("main", "email_from"); ?>">
@@ -140,7 +176,6 @@ use RusHydro\Config;
     </form>
 </div>
 
-
 <script>
     $(function () {
         $("#uploade-file").bind("click", function (event) {
@@ -153,6 +188,13 @@ use RusHydro\Config;
         $('#inputfile').on('change', function(){
             $(".profile_label_text").text($(this).val());
         });
+    });
+
+    $('.profile_form').submit(function(event){
+        if (!grecaptcha.getResponse()) {
+            alert('Вы не заполнили поле Я не робот!');
+            return false; // возвращаем false и предотвращаем отправку формы
+        }
     });
 </script>
 

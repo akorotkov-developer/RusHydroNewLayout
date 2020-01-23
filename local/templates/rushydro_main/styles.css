@@ -155,3 +155,30 @@
     font-weight: bold;
     margin-top: 50px;
 }
+#profile_politics {
+    position: relative;
+    left: 0px;
+    top: 2px;
+}
+.profile_select {
+    max-width: 687px;
+}
+.profile_footer {
+    text-align: center;
+}
+.profile_politics {
+    margin-left: -5px;
+}
+@media screen and (max-width: 500px) {
+    .profile_politics {
+        margin-left: -20px;
+    }
+    #profile_politics {
+        position: relative;
+        left: -16px;
+        top: 2px;
+    }
+}
+.profile_submit {
+    margin-top: 18px;
+}

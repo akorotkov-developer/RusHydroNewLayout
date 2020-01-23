@@ -50,7 +50,7 @@ if ($fackultet) $emailMessage .= "Факультет (специальность
 if ($kurs) $emailMessage .= "Курс / год обучения: " . $kurs . "<br>\n";
 if ($work) $emailMessage .= "Место работы: " . $work . "<br>\n";
 if ($interests) $emailMessage .= "Научные интересы: " . $interests . "<br>\n";
-if ($download_link) $emailMessage .= "Ссылка на скачивание работы: " . $download_link . "<br>\n\n";
+if ($download_link) $emailMessage .= "Ссылка на скачивание работы: <a href='http://"  . $download_link . "'>" . $download_link . "</a><br>\n\n";
 
 $emailMessage .= "<br>";
 

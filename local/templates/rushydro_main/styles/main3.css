@@ -3567,7 +3567,7 @@ label.hamburger {
   border: none;
   display: block;
   width: 142px;
-  margin-top: 22px;
+  margin-top: 18px;
   line-height: 38px;
   font-weight: bold;
   color: white;
@@ -3598,7 +3598,7 @@ label.hamburger {
 }
 
 .profile_footer-block:last-child {
-  margin-left: 50px;
+  margin-left: 0px!important;
 }
 
 .profile_datepicker {
