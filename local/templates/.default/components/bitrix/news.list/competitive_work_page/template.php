@@ -25,7 +25,7 @@ $this->setFrameMode(true);
                 $selected = "";
             }
             ?>
-            <option class="content-photo_option" <?=$selected?> data-href="<?echo $APPLICATION->GetCurPageParam("year=" . $date, array("year"));?>"><?=$date?></option>
+            <option class="content-photo_option" <?=$selected?> data-href="<?echo $APPLICATION->GetCurPageParam("year=" . $date, array("year"));?>"><?=$date?> - <?php echo (int)$date + 1?></option>
         <?php } ?>
     </select>
 
