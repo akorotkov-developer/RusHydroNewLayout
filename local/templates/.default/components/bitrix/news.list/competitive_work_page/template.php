@@ -15,9 +15,6 @@ $this->setFrameMode(true);
 
 <div class="win">
     <select class="content-photo_select" name="select2">
-        <?php if (!$_GET["year"]) {?>
-            <option class="content-photo_option">Выберите год</option>
-        <?}?>
         <?php foreach ($arResult["DATES"] as $date) {
             if ($date == $_GET["year"]) {
                 $selected = 'selected="selected"';
@@ -25,7 +22,15 @@ $this->setFrameMode(true);
                 $selected = "";
             }
             ?>
-            <option class="content-photo_option" <?=$selected?> data-href="<?echo $APPLICATION->GetCurPageParam("year=" . $date, array("year"));?>"><?=$date?> - <?php echo (int)$date + 1?></option>
+            <?
+            if ((int)$date < 2013) {
+                $dateView = $date;
+            } else {
+                $calcDate = (int)$date + 1;
+                $dateView = $date . " - " . $calcDate;
+            }
+            ?>
+            <option class="content-photo_option" <?=$selected?> data-href="<?echo $APPLICATION->GetCurPageParam("year=" . $date, array("year"));?>"><?=$dateView?></option>
         <?php } ?>
     </select>
 
