@@ -37,7 +37,12 @@ $this->setFrameMode(true);
             ?>
             <div class="content-photo_item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
                 <div class="content-photo_video">
-                    <video width="100%" height="100%" controls="controls">
+                    <?php
+                    if ($arItem["PREVIEW_PICTURE"]["SRC"] != "") {
+                        $poster = "poster='" . $arItem["PREVIEW_PICTURE"]["SRC"] . "'";
+                    }
+                    ?>
+                    <video width="100%" height="100%" controls="controls" <?=$poster?>>
                         <source src="<?=$arItem["PROPERTIES"]["VIDEO_URL"]["VALUE"]?>">
                     </video>
                 </div>
