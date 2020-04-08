@@ -1,0 +1,8 @@
+.news_item {
+    display: block!important;
+    margin-bottom: 70px!important;
+}
+.news_image {
+    float: left!important;
+    margin-right: 20px!important;
+}

@@ -34,6 +34,7 @@ $this->setFrameMode(true);
                 </p>
             </div>
         </div>
+        <div style="clear: both"></div>
     <?php }?>
 </div>
 
