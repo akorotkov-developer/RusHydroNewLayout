@@ -1,6 +1,13 @@
 $( document ).ready(function() {
     $(document).on('submit','form.askquestion',function(e){
-        call();
+        var response = grecaptcha.getResponse();
+
+        if(!grecaptcha.getResponse()) {
+            alert('Вы не заполнили поле Я не робот!!');
+        } else {
+            alert("Отправляем форму");
+            call();
+        }
 
         e.preventDefault();
     });
@@ -13,7 +20,7 @@ $( document ).ready(function() {
             data: msg,
             success: function(data) {
                 if (jQuery.parseJSON(data) == "Y") {
-                    $(".askquestion").html("Спасибо, ваше сообщение отправлено!");
+                    $(".askquestion").html("Спасибо, ваше сообщение отправлено!!");
                     $(".askquestion").css({
                         "color": "#026340",
                         "font-size": "16px",

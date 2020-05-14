@@ -61,14 +61,6 @@ use Bitrix\Main\Page\Asset;
                             </div>
                         </div>
                     </form>
-                    <script>
-                        $('.askquestion').submit(function(event){
-                            if (!grecaptcha.getResponse()) {
-                                alert('Вы не заполнили поле Я не робот!');
-                                return false; // возвращаем false и предотвращаем отправку формы
-                            }
-                        });
-                    </script>
                 </div>
             </div>
         </div>
